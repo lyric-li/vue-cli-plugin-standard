@@ -4,12 +4,5 @@
   "description": "",
   "main": "index.js",
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.28.0",
-    "stylelint": "^13.13.1",
-    "stylelint-config-standard": "^22.0.0",
-    "stylelint-order": "^4.1.0"
-  }
+  "license": "ISC"
 }
