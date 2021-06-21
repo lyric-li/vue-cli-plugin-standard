@@ -13,7 +13,7 @@ module.exports = (api, options) => {
   });
 
   // 创建新模板
-  api.render("./template");
+  api.render("./template", options);
 };
 
 module.exports.hooks = (api) => {

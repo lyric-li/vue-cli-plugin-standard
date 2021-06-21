@@ -10,8 +10,8 @@ module.exports = {
     "order/order": [
       ["custom-properties", "declarations"],
       {
-        "disableFix": true
-      }
+        "disableFix": true,
+      },
     ],
     "order/properties-order": [
       "position",
@@ -159,7 +159,7 @@ module.exports = {
       "page",
       "set-link-source",
       "unicode-bidi",
-      "speak"
+      "speak",
     ],
   },
 };

@@ -37,8 +37,8 @@ module.exports = {
         "LIFECYCLE_HOOKS",
         "methods",
         ["template", "render"],
-        "renderError"
-      ]
+        "renderError",
+      ],
     }],
     "vue/attributes-order": ["error", {
       "order": [
@@ -52,8 +52,8 @@ module.exports = {
         "OTHER_DIRECTIVES",
         "OTHER_ATTR",
         "EVENTS",
-        "CONTENT"
-      ]
+        "CONTENT",
+      ],
     }],
   },
   overrides: [
