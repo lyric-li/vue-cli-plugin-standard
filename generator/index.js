@@ -16,13 +16,15 @@ module.exports = (api, options) => {
       "less": "^3.11.3",
       "less-loader": "^6.1.3",
       "postcss-px-to-viewport": "^1.1.1",
+      "svg-sprite-loader": "^6.0.8",
     },
   });
 
   // 创建新模板
   api.render("./template", options);
   api.injectImports(api.entryFile, "import \"./plugins/vant\";");
-  api.injectImports(api.entryFile, "import \"./assets/styles/reset.less\"");
+  api.injectImports(api.entryFile, "import \"./assets/styles/reset.less\";");
+  api.injectImports(api.entryFile, "import \"./icons\";");
 };
 
 module.exports.hooks = (api) => {
