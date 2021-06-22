@@ -5,7 +5,9 @@ module.exports = (api, options) => {
     browserslist: undefined,
     eslintConfig: undefined,
     dependencies: {
+      "vue-router": "^3.5.2",
       "vant": "^2.12.21",
+      "nprogress": "^0.2.0",
     },
     devDependencies: {
       "@vue/eslint-config-airbnb": "^5.0.2",
@@ -22,9 +24,18 @@ module.exports = (api, options) => {
 
   // 创建新模板
   api.render("./template", options);
-  api.injectImports(api.entryFile, "import \"./plugins/vant\";");
-  api.injectImports(api.entryFile, "import \"./assets/styles/reset.less\";");
-  api.injectImports(api.entryFile, "import \"./icons\";");
+  // api.injectImports(api.entryFile, "import \"./plugins/vant\";");
+  // api.injectImports(api.entryFile, "import \"./assets/styles/reset.less\";");
+  // api.injectImports(api.entryFile, "import \"./icons\";");
+  api.injectImports(api.entryFile, [
+    "import router from './router'",
+    "import \"./plugins/vant\";",
+    "import \"./assets/styles/reset.less\";",
+    "import \"./icons\";",
+  ]);
+  api.injectRootOptions(api.entryFile, [
+    "router",
+  ]);
 };
 
 module.exports.hooks = (api) => {
