@@ -18,6 +18,7 @@ module.exports = {
     "no-param-reassign": "off",
     "quotes": ["error", "double"],
     "semi": ["error", "always"],
+    "import/prefer-default-export": "off",
     "vue/order-in-components": ["error", {
       "order": [
         "el",
