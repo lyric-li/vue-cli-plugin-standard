@@ -39,6 +39,17 @@ yarn run test:e2e
 
 统一管理模块的 url 请求地址， 如：`src/api/xxx.js`
 
+### ASSETS
+
+静态资源存放目录
+
+styles CSS 样式表目录
+
+- theme.less 主题样式
+- modify.less 重新定义 Vant UI 组件主题样式
+- reset.less 覆盖样式
+
+[按钮变量](https://github.com/youzan/vant/blob/dev/src/button/var.less)
 
 ### 图标
 
@@ -63,6 +74,10 @@ yarn run test:e2e
   管理模块状态，存放在 `src/store/modules` 下，其中 `index.js` 作为模块统一处理文件，请勿修改
 
 ### 其它
+
+- 插件
+
+  存放在 `src/plugins` 下
 
 - 第三方库
   
