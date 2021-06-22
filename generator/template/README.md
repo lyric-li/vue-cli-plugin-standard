@@ -14,23 +14,17 @@ yarn run serve
 # Compiles and minifies for production
 yarn run build
 
-# Compiles and minifies for production beta
-yarn run build:beta
+# Compiles and minifies for production testing
+yarn run build:testing
 
-# Compiles and minifies for production release
-yarn run build:release
+# Compiles and minifies for production prod
+yarn run build:prod
 
 # Build docker image
 yarn run docker
 
 # Lints and fixes files
 yarn run lint
-
-# Run your unit tests
-yarn run test:unit
-
-# Run your end-to-end tests
-yarn run test:e2e
 ```
 
 ## 目录规范
