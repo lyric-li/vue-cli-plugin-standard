@@ -15,6 +15,7 @@ module.exports = (api, options) => {
       "babel-plugin-import": "^1.13.3",
       "less": "^3.11.3",
       "less-loader": "^6.1.3",
+      "postcss-px-to-viewport": "^1.1.1",
     },
   });
 
