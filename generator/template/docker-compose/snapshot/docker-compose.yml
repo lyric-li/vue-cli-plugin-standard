@@ -1,0 +1,18 @@
+version: "3.7"
+
+services:
+  web:
+    container_name: ${COMPOSE_PROJECT_NAME}
+    image: ${CI_REGISTRY_IMAGE}:snapshot
+    networks:
+      - default
+    ports:
+      - mode: host
+        protocol: tcp
+        published: ${COMPOSE_PROJECT_PORT}
+        target: 80
+    restart: unless-stopped
+
+networks:
+  default:
+    name: ${COMPOSE_PROJECT_NAME}
