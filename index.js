@@ -1,23 +1,20 @@
-module.exports = (api) => {
-  api.chainWebpack((config) => {
-    // 替换 svg loader
-    const svgRule = config.module.rule("svg");
+const path = require("path");
+const { readDirSync } = require("./shared/util");
+const AbstractWebpack = require("./webpack/abstract-webpack");
 
-    // 清除已有的所有 loader。
-    // 如果你不这样做，接下来的 loader 会附加在该规则现有的 loader 之后。
-    svgRule.uses.clear();
+module.exports = (api, options) => {
+  const webpackFiles = [
+    ...readDirSync(path.resolve(__dirname, "./webpack/modules")),
+    ...readDirSync(api.resolve("./webpack/modules")),
+  ];
 
-    // 添加要替换的 loader
-    svgRule
-      .test(/\.svg$/)
-      .include.add(api.resolve(process.cwd(), "src/icons")).end()
-      .use("svg-sprite-loader")
-      .loader("svg-sprite-loader")
-      .tap((options) => {
-        options = {
-          symbolId: "icon-[name]",
-        };
-        return options;
-      });
-  });
+  const webpackConfigs = webpackFiles
+    .map((file) => require(file))
+    .filter((f) => f.constructor === AbstractWebpack.constructor)
+    .map((f) => Reflect.construct(f, [options, api]))
+    .filter((c) => c instanceof AbstractWebpack)
+    .filter((c) => c.enable());
+
+  api.configureWebpack((config) => webpackConfigs.forEach((c) => c.configureWebpack(config)));
+  api.chainWebpack((config) => webpackConfigs.forEach((c) => c.chainWebpack(config)));
 };
