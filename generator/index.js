@@ -22,6 +22,7 @@ module.exports = (api, options) => {
       "postcss-px-to-viewport": "^1.1.1",
       "svg-sprite-loader": "^6.0.8",
       "url-loader": "^4.1.1",
+      "compression-webpack-plugin": "^8.0.1",
     },
   });
 
