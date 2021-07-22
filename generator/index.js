@@ -32,7 +32,12 @@ module.exports = (api, options) => {
       "serve": "vue-cli-service serve",
       "build:testing": "vue-cli-service build --mode testing",
       "build:prod": "vue-cli-service build --mode prod",
-      "lint": "vue-cli-service lint",
+      "eslint": "vue-cli-service lint",
+      "eslint:fix": "vue-cli-service lint --fix",
+      "stylelint": "vue-cli-service stylelint",
+      "stylelint:fix": "vue-cli-service stylelint --fix",
+      "lint": "npm run eslint && npm run stylelint",
+      "lint:fix": "npm run eslint:fix && npm run stylelint:fix"
     },
   });
 
@@ -52,7 +57,7 @@ module.exports = (api, options) => {
 module.exports.hooks = (api) => {
   api.afterInvoke(() => {
     const cp = require("child_process");
-    const cpe = cp.exec("yarn && npx vue-cli-service lint --fix");
+    const cpe = cp.exec("npm install && npm run lint:fix");
     cpe.stdout.on("data", function(data) {
       console.log(data);
     });

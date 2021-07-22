@@ -3,11 +3,13 @@ const { readDirSync } = require("./shared/util");
 const AbstractWebpack = require("./webpack/abstract-webpack");
 
 module.exports = (api, options) => {
+  const commandFiles = readDirSync(path.resolve(__dirname, './command'), filename => /\.js$/.test(filename));
+  commandFiles.map(file => require(file)).forEach(f => f(api, options));
+
   const webpackFiles = [
     ...readDirSync(path.resolve(__dirname, "./webpack/modules")),
     ...readDirSync(api.resolve("./webpack/modules")),
   ];
-
   const webpackConfigs = webpackFiles
     .map((file) => require(file))
     .filter((f) => f.constructor === AbstractWebpack.constructor)
