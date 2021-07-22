@@ -2,15 +2,14 @@
 
 > Vue Cli 默认生成项目规范增强插件
 
-`@vue/cli 4.5.13` `node v14.3.0`
+`@vue/cli 4.5.13` `node v14.3.0` `yarn v1.22.10`
 
 
 ## 使用方式
 
 全局安装 Vue CLI 包
 ```bash
-npm install -g @vue/cli
-# OR
+npm install yarn -g
 yarn global add @vue/cli
 ```
 
@@ -23,7 +22,7 @@ vue create vue-demo-app
 ```bash
 git clone https://gitee.com/lyric-li/vue-cli-plugin-standard.git
 
-npm install --save-dev file:/full/path/vue-cli-plugin-standard
+yarn file:/full/path/vue-cli-plugin-standard -D
 vue invoke vue-cli-plugin-standard
 ```
 
