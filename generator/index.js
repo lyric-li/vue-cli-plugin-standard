@@ -4,6 +4,7 @@ module.exports = (api, options) => {
     description: options.description,
     browserslist: undefined,
     eslintConfig: undefined,
+    scripts: undefined,
     dependencies: {
       "vue-router": "^3.5.2",
       "vuex": "^3.6.2",
@@ -23,6 +24,15 @@ module.exports = (api, options) => {
       "svg-sprite-loader": "^6.0.8",
       "url-loader": "^4.1.1",
       "compression-webpack-plugin": "^8.0.1",
+    },
+  });
+
+  api.extendPackage({
+    scripts: {
+      "serve": "vue-cli-service serve",
+      "build:testing": "vue-cli-service build --mode testing",
+      "build:prod": "vue-cli-service build --mode prod",
+      "lint": "vue-cli-service lint",
     },
   });
 
