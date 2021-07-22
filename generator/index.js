@@ -21,6 +21,7 @@ module.exports = (api, options) => {
       "less-loader": "^6.1.3",
       "postcss-px-to-viewport": "^1.1.1",
       "svg-sprite-loader": "^6.0.8",
+      "url-loader": "^4.1.1",
     },
   });
 
@@ -31,13 +32,6 @@ module.exports = (api, options) => {
   api.injectImports(api.entryFile, "import \"./plugins/vant\";");
   api.injectImports(api.entryFile, "import \"./assets/styles/reset.less\";");
   api.injectImports(api.entryFile, "import \"./icons\";");
-  // api.injectImports(api.entryFile, [
-  //   "import router from './router'",
-  //   "import store from './store'",
-  //   "import \"./plugins/vant\";",
-  //   "import \"./assets/styles/reset.less\";",
-  //   "import \"./icons\";",
-  // ]);
   api.injectRootOptions(api.entryFile, [
     "router",
     "store",
