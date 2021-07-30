@@ -1,4 +1,3 @@
-const path = require("path");
 const AbstractWebpack = require("../abstract-webpack");
 
 class Image extends AbstractWebpack {

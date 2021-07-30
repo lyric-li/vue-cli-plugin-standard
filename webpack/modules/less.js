@@ -18,7 +18,7 @@ class Less extends AbstractWebpack {
             // 通过 modify.less 文件覆盖（文件路径为绝对路径）
             hack: `true; @import "${path.resolve(process.cwd(), "src/assets/styles/modify.less")}";`,
           },
-        }
+        },
       });
     });
   }

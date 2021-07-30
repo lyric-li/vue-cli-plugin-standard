@@ -37,7 +37,7 @@ module.exports = (api, options) => {
       "stylelint": "vue-cli-service stylelint",
       "stylelint:fix": "vue-cli-service stylelint --fix",
       "lint": "npm run eslint && npm run stylelint",
-      "lint:fix": "npm run eslint:fix && npm run stylelint:fix"
+      "lint:fix": "npm run eslint:fix && npm run stylelint:fix",
     },
   });
 

@@ -1,15 +1,15 @@
 module.exports = (api, options) => {
   api.registerCommand(
-    'stylelint',
+    "stylelint",
     {
-      description: 'A mighty, modern linter that helps you avoid errors and enforce conventions in your styles.',
-      usage: 'vue-cli-service stylelint',
-      options: { '--fix': 'automatically fixes the majority of stylistic violations' },
+      description: "A mighty, modern linter that helps you avoid errors and enforce conventions in your styles.",
+      usage: "vue-cli-service stylelint",
+      options: { "--fix": "automatically fixes the majority of stylistic violations" },
     },
     (args) => {
       let shell = "stylelint \"**/*.{vue,css,less,scss}\" --ignore-path .gitignore";
       if (args.fix) {
-        shell += ' --fix'
+        shell += " --fix";
       }
       const cp = require("child_process");
       const cpe = cp.exec(shell);
@@ -20,5 +20,5 @@ module.exports = (api, options) => {
         console.error(data);
       });
     }
-  )
-}
+  );
+};
