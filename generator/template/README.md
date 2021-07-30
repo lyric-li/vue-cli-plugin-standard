@@ -20,9 +20,6 @@ yarn run build:testing
 # Compiles and minifies for production prod
 yarn run build:prod
 
-# Build docker image
-yarn run docker
-
 # Lints and fixes files
 yarn run lint
 ```
@@ -84,7 +81,7 @@ styles CSS 样式表目录
 
 ## 开发规范
 
-#### 代码格式、命名规范等，以 `ESLint Standard` 规范为基础标准
+#### 代码格式、命名规范等，以 `ESLint Airbnb` 规范为基础标准
 
 - 判断相等统一用 `===`
 - 字符串统一用 `""`
@@ -125,8 +122,7 @@ styles CSS 样式表目录
 
 - [axios](https://github.com/axios/axios)
 - [vant](http://element-cn.eleme.io/#/zh-CN)
-- [postcss-pxtorem](https://github.com/cuth/postcss-pxtorem)
-- [amfe-flexible](https://github.com/amfe/lib-flexible)
+- [postcss-px-to-viewport](https://github.com/evrone/postcss-px-to-viewport)
 
 
 ## 注意事项

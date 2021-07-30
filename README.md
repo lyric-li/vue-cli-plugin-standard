@@ -2,8 +2,25 @@
 
 > Vue Cli 默认生成项目规范增强插件
 
-`@vue/cli 4.5.13` `node v14.3.0` `yarn v1.22.10`
+`@vue/cli v4.5.13` `node v14.3.0` `yarn v1.22.10`
 
+## 新功能
+
+* 开发
+  * 目录规范
+  * 代码规范
+  * 样式规范
+
+* 构建
+  * SVG 雪碧图
+  * 8k以下小图转 Base64
+  * 全局注入主题变量，支持全局修改 VantUI 组件样式
+  * GZip 压缩
+  * Stylelint 校验
+  * 浏览器适配
+
+* 部署
+  * CI/CD
 
 ## 使用方式
 
@@ -35,6 +52,17 @@ vue invoke vue-cli-plugin-standard
 
 统一管理模块的 url 请求地址， 如：`src/api/xxx.js`
 
+### ASSETS
+
+静态资源存放目录
+
+styles CSS 样式表目录
+
+- theme.less 主题样式
+- modify.less 重新定义 Vant UI 组件主题样式
+- reset.less 覆盖样式
+
+[按钮变量](https://github.com/youzan/vant/blob/dev/src/button/var.less)
 
 #### 图标
 
@@ -60,6 +88,10 @@ vue invoke vue-cli-plugin-standard
 
 #### 其它
 
+- 插件
+
+  存放在 `src/plugins` 下
+
 - 第三方库
   
   存放在 `src/lib` 下
@@ -71,7 +103,7 @@ vue invoke vue-cli-plugin-standard
 
 ### 开发规范
 
-#### 代码格式、命名规范等，以 `ESLint Standard` 规范为基础标准
+#### 代码格式、命名规范等，以 `ESLint Airbnb` 规范为基础标准
 
 - 判断相等统一用 `===`
 - 字符串统一用 `""`
@@ -112,8 +144,7 @@ vue invoke vue-cli-plugin-standard
 
 - [axios](https://github.com/axios/axios)
 - [vant](http://element-cn.eleme.io/#/zh-CN)
-- [postcss-pxtorem](https://github.com/cuth/postcss-pxtorem)
-- [amfe-flexible](https://github.com/amfe/lib-flexible)
+- [postcss-px-to-viewport](https://github.com/evrone/postcss-px-to-viewport)
 
 
 ### 注意事项
